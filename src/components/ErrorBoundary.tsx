@@ -33,7 +33,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             עמוד יצירת הקשר.
           </p>
           <a
-            href="/"
+            href={import.meta.env.BASE_URL}
             className="mt-6 rounded-lg bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-800"
           >
             חזרה לדף הבית

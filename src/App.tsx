@@ -7,19 +7,23 @@ import { AboutPage } from '@/pages/AboutPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
-const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { path: '/', element: <HomePage /> },
-      { path: '/lessons', element: <LessonsPage /> },
-      { path: '/lessons/:slug', element: <LessonPage /> },
-      { path: '/about', element: <AboutPage /> },
-      { path: '/contact', element: <ContactPage /> },
-      { path: '*', element: <NotFoundPage /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { path: '/', element: <HomePage /> },
+        { path: '/lessons', element: <LessonsPage /> },
+        { path: '/lessons/:slug', element: <LessonPage /> },
+        { path: '/about', element: <AboutPage /> },
+        { path: '/contact', element: <ContactPage /> },
+        { path: '*', element: <NotFoundPage /> },
+      ],
+    },
+  ],
+  // תמיכה באירוח תחת תת-נתיב (GitHub Pages)
+  { basename: import.meta.env.BASE_URL.replace(/\/$/, '') },
+);
 
 export default function App() {
   return <RouterProvider router={router} />;
