@@ -25,6 +25,16 @@ npm run preview    # תצוגה מקדימה של תוצר הבנייה
 npm run lint       # ESLint
 ```
 
+## פריסה (Deployment)
+
+האתר נפרס אוטומטית ל-GitHub Pages בכל push ל-`main`
+(ראו `.github/workflows/deploy.yml`), וזמין בכתובת:
+<https://ido-green.github.io/learn-python/>
+
+הפריסה כוללת `404.html` שהוא עותק של `index.html`, כך שקישורים עמוקים
+(למשל `/lessons/loops`) עובדים גם ברענון. אם עוברים לדומיין משלכם,
+עדכנו את `base` ב-`vite.config.ts`.
+
 ## מבנה הפרויקט
 
 ```
